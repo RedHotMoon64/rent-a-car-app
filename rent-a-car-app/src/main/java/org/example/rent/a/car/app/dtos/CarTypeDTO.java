@@ -9,5 +9,5 @@ import lombok.Setter;
 @AllArgsConstructor
 public class CarTypeDTO {
     private String carType;
-    private int count;
+    private String count;
 }

@@ -1,6 +1,5 @@
 package org.example.rent.a.car.app.services;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.example.rent.a.car.app.dtos.CarDTO;
 import org.example.rent.a.car.app.dtos.CarTypeDTO;
@@ -10,10 +9,7 @@ import org.example.rent.a.car.app.enums.CarType;
 import org.example.rent.a.car.app.exceptions.CarNotFoundException;
 import org.example.rent.a.car.app.repositories.CarRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import javax.validation.Valid;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
