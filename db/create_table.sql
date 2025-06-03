@@ -1,0 +1,9 @@
+CREATE TABLE CAR
+(
+	id 	INTEGER, PRIMARY KEY, NOT NULL,
+	brand 	VARCHAR(200), NOT NULL,
+	model 	VARCHAR(200), NOT NULL,
+	price 	NUMERIC,
+	type 	VARCHAR(200),
+	color 	VARCHAR(50)
+)

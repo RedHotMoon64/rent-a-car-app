@@ -7,6 +7,7 @@ import org.example.rent.a.car.app.entities.Car;
 import org.example.rent.a.car.app.enums.CarType;
 import org.example.rent.a.car.app.exceptions.CarNotFoundException;
 import org.example.rent.a.car.app.repositories.CarRepository;
+import org.example.rent.a.car.app.services.CarProcessingService;
 import org.example.rent.a.car.app.services.PriceValidationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,6 +22,7 @@ import static org.mockito.Mockito.*;
 public class RentACarControllerTest {
     private CarRepository carRepository;
     private PriceValidationService priceValidationService;
+    private CarProcessingService carProcessingService;
     private RentACarController controller;
     List<Car> carList = new ArrayList<>();
     List<CarDTO> result = new ArrayList<>();
@@ -32,7 +34,8 @@ public class RentACarControllerTest {
     void beforeEach() {
         carRepository = mock(CarRepository.class);
         priceValidationService = mock(PriceValidationService.class);
-        controller = new RentACarController(carRepository, priceValidationService);
+        carProcessingService = new CarProcessingService(carRepository, priceValidationService);
+        controller = new RentACarController(carProcessingService);
         Car car1 = new Car(1, "brand", "model", 30, CarType.STANDARD, "red");
         Car car2 = new Car(2, "brand2", "model2", 31, CarType.STANDARD, "red2");
         carList.add(car1);
